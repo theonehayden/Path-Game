@@ -1,16 +1,82 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>RPG Game</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-  </head>
-  <body>
-    <h1>Sign In or Sign Up</h1>
-  </body>
-  <!-- firebase -->
-  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
-  <!-- js -->
-  <script src="js/index.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <title>RPG Game</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <!-- Jquery library   ---->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div style="padding: 17px">
+            <div
+                style="
+                    padding: 17px;
+                    border: solid thin black;
+                    width: 90%;
+                    height: 90%;
+                    margin: auto;
+                "
+            >
+                <!-- header -->
+                <div
+                    style="margin: auto; display: flex; justify-content: center"
+                >
+                    <h1>Welcome!</h1>
+                </div>
+                <!-- inputs for username & password -->
+                <div
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 77px;
+                        align-items: center;
+                    "
+                >
+                    <div style="padding: 17px">
+                        <div>Username</div>
+                        <input style="height: 30px; width: 250px" />
+                    </div>
+                    <div style="padding: 17px">
+                        <div>Password</div>
+                        <input style="height: 30px; width: 250px" />
+                    </div>
+                </div>
+                <!-- sign in & sign up buttons -->
+                <div
+                    style="
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 77px;
+                    "
+                >
+                    <div style="padding: 17px">
+                        <button
+                            id="sign-in-button"
+                            style="height: 50px; width: 100px"
+                        >
+                            Sign In
+                        </button>
+                    </div>
+                    <div style="padding: 17px">
+                        <button
+                            id="sign-up-button"
+                            style="height: 50px; width: 100px"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
+    <!-- js -->
+    <script src="js/index.js"></script>
 </html>

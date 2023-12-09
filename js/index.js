@@ -12,18 +12,16 @@ firebase.initializeApp(firebaseConfig);
 $("#sign-in-button").click(e => {
     e.preventDefault();
     // get the user name and password from inputs
-    // firebase doesn't have something for username so we add email ending
-    const username = $("#username").val() + "@something.com";
+    // firebase doesn't have something for username so we add email
+    const email = $("#username").val() + "@something.com";
     const password = $("#password").val();
 
     firebase
         .auth()
-        .signInWithEmailAndPassword(username, password)
+        .signInWithEmailAndPassword(email, password)
         .then(() => {
-            // Signed in
             alert("Logged in.");
-            // let user = firebase.auth().currentUser;
-            // window.location.href = "Surveyresult.html";
+            window.location.href = "MainMenu.html";
         })
         .catch(error => {
             // change all mentions of email to username
@@ -40,24 +38,23 @@ $("#sign-in-button").click(e => {
 // save the data
 $("#sign-up-button").click(e => {
     e.preventDefault();
-    const username = $("#username").val() + "@something.com";
+    const displayName = $("#username").val();
+    const email = displayName + "@something.com";
     const password = $("#password").val();
 
     // create a user with username(email) and password
     firebase
         .auth()
-        .createUserWithEmailAndPassword(username, password)
-        .then(() => {
-            // Signed in
-            // ...
-            // var user = result.user;
-            // user.updateProfile({
-            //     displayName: username
-            // }).then(() =>)
-
-            alert("You are signed up.");
-            // window.location.href = "Login.html";
-            // console.log(result);
+        .createUserWithEmailAndPassword(email, password)
+        .then(result => {
+            result.user
+                .updateProfile({
+                    displayName: displayName
+                })
+                .then(() => {
+                    alert("You are signed up.");
+                    window.location.href = "MainMenu.html";
+                });
         })
         .catch(error => {
             const message = error.message.includes("email")

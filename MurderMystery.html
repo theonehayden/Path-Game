@@ -10,7 +10,7 @@
         </div>
    <div class="center" id="center">
       
-        <select name="choise" id="choise"> 
+        <select name="choice" id="choice"> 
             <option value="first">Continue</option>
              <option value="second">End</option>
              <option value="third"></option>
@@ -26,12 +26,12 @@
 
         <script>
 
-            var but = document.getElementById("submit"); // This is the continue button to submit the choises
+            var but = document.getElementById("submit"); // This is the continue button to submit the choices
             var ptext = document.getElementById("ptext");
             var tracker = "0";
             but.addEventListener("click",function(){
 
-            var option = document.getElementById("choise").value;
+            var option = document.getElementById("choice").value;
             
             if(option == "first"){ // If/else statement that adds a number to the empty string, 'tracker' to dictate which case to choose
                 console.log("first");
@@ -51,117 +51,117 @@
           
 
 
-            switch(tracker) { // This is the switch case that controlls all the choises in the game. Optimal? no. Funny? yes
+            switch(tracker) { // This is the switch case that controlls all the choices in the game. Optimal? no. Funny? yes
                 
                 case "0": // Intro to the game
                     ptext.textContent = "In a city with one of the highest crime rates in the word, an ordinary man is walking down the street. Now this street isn't anything special. A lamp post here, a trash bin there, the occasional barking dog, but on this night, it was quieter than usual. With almost no traffic and only one other person walking down the same street. Now where was this ordinary man headed? To the store maybe, although most of them would be closed down this late at night. Or maybe to his home to sleep after a long day of work at his ordinary job. I guess that's not too important now is it. The man wasn't really going to make it there anyway. As the man stopped to check his watch. The figure, who had now gotten closer than most people would be comfortable with, had passed by the man. The man crumples to the ground, a knife in his chest, and he lies there silent and still until someone happens to walk by the body and call the police.";
-                    document.getElementById('choise')[0].innerHTML = "Continue";
-                    document.getElementById('choise')[1].innerHTML = "Stop";
+                    document.getElementById('choice')[0].innerHTML = "Continue";
+                    document.getElementById('choice')[1].innerHTML = "Stop";
                     break;s
-                    case "01": // First choise
+                    case "01": // First choice
                         ptext.textContent = "On the other side of the city, in a seemingly unimportant office, in an unimportant building, on an unimportant street, sat maybe the most important person in this story. You.  The newly established Private Detective you are, are sitting in your chair, feet propped up on the desk, waiting for something, anything to happen. That is when you hear a knock on the door. 'Knock Knock' A stranger come to greet you, or possible the first case of your career. But there's only one way to find out.";
-                        document.getElementById('choise')[0].innerHTML = "Go away! I'm not in the mood to chat right now.";
-                        document.getElementById('choise')[1].innerHTML = "The door's open.";
+                        document.getElementById('choice')[0].innerHTML = "Go away! I'm not in the mood to chat right now.";
+                        document.getElementById('choice')[1].innerHTML = "The door's open.";
                     break;
                     case "011": // speed run fr
                     ptext.textContent = "Woman: Fine, I'll go get someone else to help me.";
                     console.log('Ending 1');
                     break;
                     case "012": // end the game?
-                    ptext.textContent = "Woman: I heard that you're the guy to come to if I need a mysytery solved?";
-                    document.getElementById('choise')[0].innerHTML = "You heard wrong.";
-                    document.getElementById('choise')[1].innerHTML = "Sit down, who are you and what do you have for me?";
+                    ptext.textContent = "Woman: I heard that you're the guy to come to if I need a mystery solved?";
+                    document.getElementById('choice')[0].innerHTML = "You heard wrong.";
+                    document.getElementById('choice')[1].innerHTML = "Sit down, who are you and what do you have for me?";
                     break;
                     case "0121": // you suck
                     ptext.textContent = "No detecting?";
                     console.log("Ending 1");
                     break;
                     case "0122": // Introductions
-                    ptext.textContent = "Woman: My name is Sheila and thank you, I did't know who else to come to with this. The police are saying that they don't suspect any sort of foul play but I know what really happened. My brother was murdered.";
-                    document.getElementById('choise')[0].innerHTML = "Continue";
-                    document.getElementById('choise')[1].innerHTML = "";
+                    ptext.textContent = "Woman: My name is Sheila and thank you, I did't know who else to come to with this.The police are saying that they don't suspect any sort of foul play but I know what really happened. My brother was murdered.";
+                    document.getElementById('choice')[0].innerHTML = "Continue";
+                    document.getElementById('choice')[1].innerHTML = "";
                     
                     break;
                     case "01221": // file given
-                    ptext.textContent = "She hands you a tan file wth a piece of paper sticking out of it. As You open the file, you  see that it contains a picture of the victim, come basic personal information about him and a blank piece of paper./n I know it's a little blank right now, but lke I said, the police really don't know what happened. Oh, I do know a couple of things! He always stopped by a cafe on the way to his house to say hi to a buddy of his. He was also just getting off work when it happened";
-                    document.getElementById('choise')[0].innerHTML = "I should go to his place of work first to look for clues.";
-                    document.getElementById('choise')[1].innerHTML = "I should go to the cafe to look for clues.";
-                    document.getElementById('choise')[2].innerHTML = "I should go to the scene of the crime to look for clues.";
+                    ptext.textContent = "She hands you a tan file wth a piece of paper sticking out of it. As You open the file, you  see that it contains a picture of the victim, come basic personal information about him and a blank piece of paper. I know it's a little blank right now, but lke I said, the police really don't know what happened. Oh, I do know a couple of things! He always stopped by a cafe on the way to his house to say hi to a buddy of his. He was also just getting off work when it happened";
+                    document.getElementById('choice')[0].innerHTML = "I should go to his place of work first to look for clues.";
+                    document.getElementById('choice')[1].innerHTML = "I should go to the cafe to look for clues.";
+                    document.getElementById('choice')[2].innerHTML = "I should go to the scene of the crime to look for clues.";
                     
                     break;
                     case "012211": // place of work option
                     ptext.textContent = "Sheila: That's a great Idea. Let me know if you can find anything there. He had a couple of friends at work that seemed to know him pretty well.";
-                    document.getElementById('choise')[0].innerHTML = "continue";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "continue";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
 
                     break;
                     case "012212": // cafe option
                     ptext.textContent = "Sheila: That's a good Idea. Let me know if you find anything there. His buddy should be there around this time of day so you should be able to ask him some questions.";
-                    document.getElementById('choise')[0].innerHTML = "continue";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "continue";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "012213": // crime scene option
                     ptext.textContent = "That's a great Idea. Let me know if you find anything there. He was walking down 5th street headed towards the intersection of 3rd and 5th. It was also next to some old building.";
-                    document.getElementById('choise')[0].innerHTML = "continue";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "continue";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "0122111": // Place of work
                     ptext.textContent = "As you arrive at the very corporate looking building, the grey clouds above you seem to almost set the tone for the dullest place you have seen in a long time. As you step into the building you are greeted by the dullest color pallet you've ever seen that almost matches sky's dim appearance almost perectly.";
-                    document.getElementById('choise')[0].innerHTML = "continue";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "continue";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "01221121": // Cafe
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "0122131": // Crime scene
 
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "01221111": // Inside the corporate building
                     ptext.textContent = "In front of you is an elevator, and a set of stairs that seem to lead to the main section of the building. Odd that there isn't anyone at the front desk though.";
-                    document.getElementById('choise')[0].innerHTML = "Take the stairs to the next floor of the building.";
-                    document.getElementById('choise')[1].innerHTML = "Take the elevator to the next floor of the building.";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "Take the stairs to the next floor of the building.";
+                    document.getElementById('choice')[1].innerHTML = "Take the elevator to the next floor of the building.";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "012211111": // taking the stairs up in the building.
-                    ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    ptext.textContent = "You walk over to the stairs and ";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "012211112": // taking the elevator up in the building
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "0":
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "0":
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
                     case "0":
                     ptext.textContent = "";
-                    document.getElementById('choise')[0].innerHTML = "";
-                    document.getElementById('choise')[1].innerHTML = "";
-                    document.getElementById('choise')[2].innerHTML = "";
+                    document.getElementById('choice')[0].innerHTML = "";
+                    document.getElementById('choice')[1].innerHTML = "";
+                    document.getElementById('choice')[2].innerHTML = "";
                     break;
             }
         });

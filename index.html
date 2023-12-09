@@ -13,28 +13,26 @@
         ></script>
     </head>
     <body>
-        
-        <div style="padding: 17px">
-            <div>
-                <p style="background-image : url('img/office.jpg');">       </p>
-
-            </div>
+        <div style="height: 100%; display: flex">
             <div
-         
                 style="
                     padding: 17px;
                     border: solid thin black;
+                    border-radius: 25px;
                     width: 90%;
                     height: 90%;
                     margin: auto;
+                    background-color: #dbbcac;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 "
             >
-
                 <!-- header -->
                 <div
                     style="margin: auto; display: flex; justify-content: center"
                 >
-                    <h1>Welcome!</h1>
+                    <h1>Welcome to the RPG Path Game</h1>
                 </div>
                 <!-- inputs for username & password -->
                 <div
@@ -47,11 +45,20 @@
                 >
                     <div style="padding: 17px">
                         <div>Username</div>
-                        <input style="height: 30px; width: 250px" />
+                        <input
+                            id="username"
+                            style="height: 30px; width: 250px"
+                        />
                     </div>
                     <div style="padding: 17px">
                         <div>Password</div>
-                        <input style="height: 30px; width: 250px" />
+                        <input
+                            id="password"
+                            style="height: 30px; width: 250px"
+                        />
+                        <div class="helper-text">
+                            *Please use at least 6 characters.
+                        </div>
                     </div>
                 </div>
                 <!-- sign in & sign up buttons -->
@@ -65,7 +72,11 @@
                     <div style="padding: 17px">
                         <button
                             id="sign-in-button"
-                            style="height: 50px; width: 100px"
+                            style="
+                                height: 50px;
+                                width: 100px;
+                                border-radius: 10px;
+                            "
                         >
                             Sign In
                         </button>
@@ -73,17 +84,25 @@
                     <div style="padding: 17px">
                         <button
                             id="sign-up-button"
-                            style="height: 50px; width: 100px"
+                            style="
+                                height: 50px;
+                                width: 100px;
+                                border-radius: 10px;
+                            "
                         >
                             Sign Up
                         </button>
-                        <a href="/MurderMystery.html">Test link to game</a>
-                        <a href="/MurderMystery.html">Test link to game</a>
-
-                       
-
-
                     </div>
+                </div>
+                <div
+                    style="
+                        flex-grow: 1;
+                        display: flex;
+                        align-content: flex-end;
+                        flex-wrap: wrap;
+                    "
+                >
+                    <footer>&copy 2023. Aaron Karius & Hayden Comer.</footer>
                 </div>
             </div>
         </div>

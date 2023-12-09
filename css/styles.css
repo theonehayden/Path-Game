@@ -1,0 +1,12 @@
+* {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+div,
+button {
+    font-size: large;
+}
+
+.helper-text {
+    font-size: smaller;
+}

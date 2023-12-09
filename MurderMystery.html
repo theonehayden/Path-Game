@@ -4,12 +4,122 @@
         <title>RPG Game</title>
     </head>
     <body>
-        <div id="Gname">
-            // This box holds the image or text for the tite of the game.
+        <div class="inCenter" id="inCenter">
+            <p id="dtext"></p>
+
         </div>
-        <div id="Gmenu">
-            // This box holds the menue for starting the game or viewing saves
-            and things of the sort.
-        </div>
+   <div class="center" id="center">
+      
+        <select name="choise" id="choise">
+            <option value="select">select</option>
+             <option value="first">Go away! I'm not in the mood to chat right now.</option>
+             <option value="second">The door's open</option>
+            <option value="third"></option>
+            <option value="fourth"></option>
+
+        </select>  
+        <button  id="submit" value="Continue">Continue</button>  
+        
+
+    </div>
+
+
+        <script>
+
+            var newText = document.getElementById("submit");
+            var newerText = document.getElementById("dtext");
+            newText.addEventListener("click",function(){
+
+            var option = document.getElementById("choise").value;
+
+            if(option == "first"){
+                console.log("first");
+                tracker = tracker + "1";
+            }
+            else if(option == "second"){
+                console.log("second");
+                tracker = tracker + "2"
+            }
+            else if(option == "third"){
+                console.log("third");
+                tracker = tracker + "3"
+            }
+            else if(option == "fourth"){
+                console.log("fourth");
+                tracker = tracker + "4"
+            }
+
+
+            switch(tracker) {
+                case "0":
+                    ptext.textContent = "In a city with one of the highest crime rates in the word, an ordinary man is walking down the street. Now this street isn't anything special. A lamp post here, a trash bin there, the occasional barking dog, but on this night, it was quieter than usual. With almost no traffic and only one other person walking down the same street. Now where was this ordinary man headed? To the store maybe, although most of them would be closed down this late at night. Or maybe to his home to sleep after a long day of work at his ordinary job. I guess that's not too important now is it. The man wasn't really going to make it there anyway. As the man stopped to check his watch. The figure, who had now gotten closer than most people would be comfortable with, had passed by the man. The man crumples to the ground, a knife in his chest, and he lies there silent and still until someone happens to walk by the body and call the police.";
+                    document.getElementByName('choise')[0].innerHTML = "Go away! I'm not in the mood to chat right now.";
+                    document.getElementByName('choise')[1].innerHTML = "The door's open."
+                    break;
+                    case "01":
+                    ptext.textContent = "Woman: Fine, I'll go get someone else to help me.";
+                    console.log('Ending 1');
+                    break;
+                    case "02":
+                    ptext.textContent = "Woman: I heard that you're the guy to come to if I need a mysytery solved?";
+                    document.getElementByName('choise')[0].innerHTML = "You heard wrong."
+                    document.getElementByName('choise')[1].innerHTML = "Sit down, what do you have for me?"
+                    break;
+                    case "021":
+                    ptext.textContent = "No detecting?";
+                    console.log("Ending 1");
+                    break;
+                    case "022":
+                    ptext.textContent = "Woman: Thank you, I did't know who else to come to with this. The police are saying that they don't suspect any sort of foul play but I know what really happened. My brother was murdered.";
+                    document.getElementByName('choise')[0].innerHTML = "Continue"
+                    document.getElementByName('choise')[1].innerHTML = ""
+                    
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+                    case "0":
+                    ptext.textContent = "INTRO";
+                    break;
+            }
+        });
+        </script>
+
+
+
+
     </body>
 </html>

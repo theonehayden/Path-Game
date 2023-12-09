@@ -23,13 +23,13 @@ $("#sign-in-button").click(e => {
             alert("Logged in.");
             window.location.href = "MainMenu.html";
         })
-        .catch(error => {
+        .catch(e => {
             // change all mentions of email to username
-            const message = error.message.includes("email")
-                ? error.message
+            const message = e.message.includes("email")
+                ? e.message
                       .replace("email address", "username")
                       .replace("email", "username")
-                : error.message;
+                : e.message;
 
             alert(message.slice(message.indexOf(":") + 1, message.length));
         });
@@ -56,12 +56,12 @@ $("#sign-up-button").click(e => {
                     window.location.href = "MainMenu.html";
                 });
         })
-        .catch(error => {
-            const message = error.message.includes("email")
-                ? error.message
+        .catch(e => {
+            const message = e.message.includes("email")
+                ? e.message
                       .replace("email address", "username")
                       .replace("email", "username")
-                : error.message;
+                : e.message;
 
             alert(message.slice(message.indexOf(":") + 1, message.length));
         });

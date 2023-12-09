@@ -10,11 +10,20 @@ firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged(currentUser => {
     if (currentUser) {
-        // todo: remove
-        console.log(currentUser);
         $("#user-welcome").text(`Welcome ${currentUser.displayName}`);
     } else {
-        alert("Please sign in.");
         window.location.href = "index.html";
     }
+});
+
+$("#logout-button").click(() => {
+    firebase
+        .auth()
+        .signOut()
+        .then(() => {
+            alert("Successfully logged out.");
+        })
+        .catch(e => {
+            alert(e.message);
+        });
 });

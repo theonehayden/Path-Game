@@ -111,19 +111,19 @@ firebase.auth().onAuthStateChanged(async currentUser => {
             ) {
                 case "01": // First choice
                     $("#choice").show();
-
+                    document.getElementById('background').style.backgroundImage = "url(img/office.jpg)";
                     pText.textContent =
                         "On the other side of the city, in a seemingly unimportant office, in an unimportant building, on an unimportant street, sat maybe the most important person in this story. You.  The newly established Private Detective you are, are sitting in your chair, feet propped up on the desk, waiting for something, anything to happen. That is when you hear a knock on the door. 'Knock Knock' A stranger come to greet you, or possible the first case of your career. But there's only one way to find out.";
 
                     populateOptions([
-                        "Go away! I'm not in the mood to chat right now.",
-                        "The door's open."
+                        "Say: Go away! I'm not in the mood to chat right now.",
+                        "Say: The door's open."
                     ]);
-
+                    
                     break;
                 case "011": // speed run fr
                     pText.textContent =
-                        "Woman: Fine, I'll go get someone else to help me.";
+                        "Woman: 'Fine, I'll go get someone else to help me.'";
 
                     hideOptions();
                     $("#main-menu-button").show();
@@ -137,8 +137,8 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                         "Woman: I heard that you're the guy to come to if I need a mystery solved?";
 
                     populateOptions([
-                        "You heard wrong.",
-                        "Sit down, who are you and what do you have for me?"
+                        "Say: You heard wrong.",
+                        "Say: Sit down, who are you and what do you have for me?"
                     ]);
                     break;
                 case "0121": // you suck
@@ -151,7 +151,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     break;
                 case "0122": // Introductions
                     pText.textContent =
-                        "Woman: My name is Sheila and thank you, I did't know who else to come to with this. The police are saying that they don't suspect any sort of foul play but I know what really happened. My brother was murdered.";
+                        "Woman: 'My name is Sheila and thank you, I did't know who else to come to with this. The police are saying that they don't suspect any sort of foul play but I know what really happened. My brother was murdered.'";
 
                     // no choices here so we just hide the <select>
                     $("#choice").hide();
@@ -192,6 +192,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     populateOptions(["Continue"]);
                     break;
                 case "0122111": // Place of work
+                document.getElementById('background').style.backgroundImage = "url(img/corpo.jpg)";
                     pText.textContent =
                         "As you arrive at the very corporate looking building, the grey clouds above you seem to almost set the tone for the dullest place you have seen in a long time. As you step into the building you are greeted by the dullest color pallet you've ever seen that almost matches sky's dim appearance almost perfectly.";
 
@@ -199,6 +200,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     populateOptions(["Continue"]);
                     break;
                 case "0122121": // Cafe
+                document.getElementById('background').style.backgroundImage = "url(img/cafe.jpeg)";
                     $("#choice").show();
                     pText.textContent =
                         "When you arrive at the café, you see a street that is anything but ordinary, almost as if in contrast of the company building. It has a mural of flowers in a field painted on the side of its brick wall and welcoming glass doors that separate the lively street corner from a group of the happiest people you've seen in a long time. As you step through the doors, you are greeted by brightly painted walls, tables lining the floor with the occasional couple or person sitting at them, and a sad looking man, sitting at a table in the corner.";
@@ -209,14 +211,14 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                         "Look around the cafe to see if you can find any more clues."
                     ]);
                     break;
-                case "01221211": // Cafe / main in the corner
+                case "01221211": // Cafe / man in the corner
                     pText.textContent =
                         "You walk over to the man in the corner and he stands up, almost as if he recognizes you. ";
 
                     $("#choice").hide();
                     populateOptions(["Continue"]);
                     break;
-                case "012212111": // Cafe / main in the corner
+                case "012212111": // Cafe / man in the corner
                     $("#choice").show();
 
                     pText.textContent =
@@ -237,12 +239,40 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                         "Go and look around the cafe for clues"
                     ]);
                     break;
+                    case "012212121":
+
+                        pText.textContent = "You try to talk to the lady at the front counter but she continues to ignore you and just gestures towards the man sitting at the table.";
+                        populateOptions([
+                            "Walk over and talk to the man in the corner."
+                        ]);
+                    break;
+                    case "012212121":
+                        tracker = "01221211";
+                    pText.textContent = "You walk over to the man in the corner and he stands up, almost as if he recognizes you.";
+                    populateOptions([
+                        "Continue"
+                    ]);
+                break;
+
                 case "012212123": // Cafe / looking around after counter
-                    tracker = "01221213";
+                    
 
-                    pText.textContent = "";
+                    pText.textContent = "You look around and it seems like everyone has left the building. Everything is in place, so they weren't in a rush but there were definately people here before.";
 
-                    populateOptions([""]);
+                    populateOptions([
+                        "Walk over and talk to the man in the corner."
+                    ]);
+                    break;
+                    case "0122121231": // Cafe / looking around after counter
+                        tracker = "01221211";
+
+                    pText.textContent = "You walk over to the man in the corner and he stands up, almost as if he recognizes you. ";
+
+                    $("#choice").hide();
+
+                    populateOptions([
+                        "Continue"
+                    ]);
                     break;
                 case "012212122": // Cafe / table after counter
                     tracker = "01221211";
@@ -254,18 +284,200 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     populateOptions(["Continue"]);
                     break;
                 case "01221213": // Cafe / looking around
-                    pText.textContent = "";
-
-                    populateOptions([""]);
+                    pText.textContent = "You look around and it seems like everyone has left the building. Everything is in place, so they weren't in a rush but there were definately people here before.";
+                        tracker = "01221211";
+                    populateOptions([
+                        "Walk over to the man in the corner"
+                    
+                    ]);
                     break;
-
+                    case "012212131":
+                        
+                    break;
                 case "0122131": // Crime scene
+                document.getElementById('background').style.backgroundImage = "url(img/crimScene.jpg)";
                     $("#choice").show();
-                    pText.textContent = "";
+                    pText.textContent = "When you arrive at the crime scene, you see an abandoned looking street, with the occasional dead tree and an abandoned looking apartment building looking over the spot of the victim's death. You also see a silver coin sitting on the ground. Not one you recognize though. You also hear a slight shuffling from inside the abandoned building. ";
+
+                    populateOptions([
+                        "Look around the crime scene to gather more clues",
+                        "Investigate the noise",
+                        "Pick up the silver coin"
+                    ]);
+                    break;
+
+                    case "01221311": // Crime scene
+                    $("#choice").show();
+                    pText.textContent = "You look around the crime scene and as you look closer, you see that there are scuff marks near the coin. Almost as if someone had dragged something heavy across the sidewalk";
+
+                    populateOptions([
+                        "Pick up the silver coin",
+                        "Look Behind you"
+                    ]);
+                    break;
+
+                    case "012213111": // Crime scene
+                    //tracker = "012213122"
+                    document.getElementById('background').style.backgroundImage = "url(img/coin.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You pick up the silver coin and notice that it has an engraving of an axe with the words, 'for the code of honor we server' You place the coin in your pocket.";
+
+                    populateOptions(["Continue"]);
+                    break;
+
+                    case "0122131111": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/house.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You walk back over and pick up he silver coin. Oddly enough, it has an engraving of an axe with the words, 'for the code of honor we serve' You place the coin in you pocket and walk back over towards the house, opening the door and stepping inside. (It looks a lot tidier than you would imagine.) ";
+                    alert("This is the end of the demo");
+                    populateOptions([""]);
+                    break;
+
+                    case "012213112": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/black.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You turn around real quick and then turn back to the way you were facing before";
+                    alert("That was a bit paranoid of you.");
+                    alert("now that I'm here though, I need to tell you something quickly before they catch on to me.");
+                    alert("This game, is telling a real story, my story to be precise. It may seem like a fun adventure but what you do here affects me just as it does you.");
+                    alert("Be careful who you trust. I'll be in contact soon.");
+
+                    populateOptions([
+                        "Continue"
+                    ]);
+                    break;
+
+                    case "0122131121": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/crimScene.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "That was odd but the mystery is still unsolved, so I must venture forth.";
+
+                    populateOptions(["Investigate the noise"]);
+                    break;
+
+
+                    case "01221311211":
+                        document.getElementById('background').style.backgroundImage = "url(img/house.jpg)";
+                        tracker = "01221312";
+                    $("#choice").show();
+                    pText.textContent = "You walk over to the house and look in the window, there doesn't look to be any signs of life but you could've swore you heard something from inside the house. The curtain on the window does seem to rustle a bit though, almost as if someone just had it opened and closed it in a hurry. ";
+
+                    populateOptions([
+                        "Enter the house(The door is probably unlocked anyway)",
+                        "Go back over and pick up the coin then enter the house(Maybe you'll need this later)"
+                    ]);
+                    break;
+
+                    case "01221312": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/house.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You walk over to the house and look in the window, there doesn't look to be any signs of life but you could've swore you heard something from inside the house. The curtain on the window does seem to rustle a bit though, almost as if someone just had it opened and closed it in a hurry. ";
+
+                    populateOptions([
+                        "Enter the house(The door is probably unlocked anyway)",
+                        "Go back over and pick up the coin then enter the house(Maybe you'll need this later)"
+                    ]);
+                    break;
+
+                    case "012213121": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/house.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You step into the house and notice that it looks cleaner than the outside of the house would make you think. ";
+                    alert("This is the end of the demo.");
+                    populateOptions([""]);
+                    break;
+
+                    case "012213122": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/coin.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You walk back over and pick up he silver coin. Oddly enough, it has an engraving of an axe with the words, 'for the code of honor we serve' You place the coin in you pocket and walk back over towards the house, opening the door and stepping inside. (It looks a lot tidier than you would imagine.) ";
+                    alert("This is the end of the demo");
+                    $("#choice").hide();
 
                     populateOptions([""]);
                     break;
+
+                    case "01221313": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/coin.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You reach over and pick up the silver coin. It has an engraving of an axe with the words 'for the code of honor we serve' You place the coin in your pocket ";
+
+                    populateOptions(["Continue"]);
+                    break;
+
+                    case "012213131": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/walkedTowards)";
+                    $("#choice").show();
+                    pText.textContent = "Standing back up, you notice a figure walking down the street towards you. ";
+
+                    populateOptions(["Continue"]);
+                    break;
+
+                    case "0122131311": // Crime scene
+                    
+                    $("#choice").show();
+                    alert("Go into the house. I don't have time to explain but you need to trust me. This man is not here to shake your hand.");
+                    pText.textContent = "It is a bit darker than you remember it being. Maybe you should go into the house to investigate before it gets too late.";
+
+                    populateOptions([
+                        "Go into the house",
+                        "Approach the man on the street"
+                    ]);
+                    break;
+
+                    case "01221313111": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/house.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You step over towards the house and open the door (Why is it unlocked)";
+
+                    populateOptions(["Continue"]);
+                    break;
+                    case "012213131111": // Crime scene
+                    $("#choice").show();
+                    pText.textContent = "As you enter, you close the door behind you and look around to get a good idea of what this house looks like. (It's pretty tidy for a house that looks this old on the outside.) ";
+                    alert("You have reached the end of the demo");
+                    $("#choice").hide();
+
+                    populateOptions([""]);
+                    break;
+
+                    case "01221313112": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/walkedPast.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "As you walk towards the man in the trench coat, he brushes past you bumping into your shoulder. ";
+
+                    populateOptions(["Continue"]);
+                    break;
+                    case "012213131121": // Crime scene
+                    document.getElementById('background').style.backgroundImage = "url(img/black.jpg)";
+                    $("#choice").show();
+                    pText.textContent = "You look around and everything seems to get darker and darker until you fade from consciousness. ";
+                    $("#choice").hide();
+
+                    console.log("Ending 4: Poisoned in the street.");
+                    $("#main-menu-button").show();
+                    db.collection("rpg").doc(currentUser.displayName).delete();
+                    populateOptions([""]);
+                    break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 case "01221111": // Inside the corporate building
+                document.getElementById('background').style.backgroundImage = "url(img/upChoice.jpg)";
                     $("#choice").show();
 
                     pText.textContent =
@@ -277,6 +489,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     ]);
                     break;
                 case "012211111": // taking the stairs up in the building.
+                document.getElementById('background').style.backgroundImage = "url(img/stairs.jpg)";
                     pText.textContent =
                         "You walk over to the stairs and as you take the first step, you feel an odd presence. Almost as if some is watching you but as you look around, the building looks just as empty as ever.";
 
@@ -284,6 +497,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     populateOptions(["Continue"]);
                     break;
                 case "012211112": // taking the elevator up in the building
+                document.getElementById('background').style.backgroundImage = "url(img/elevator.jpg)";
                     pText.textContent =
                         "You walk over to the elevator and as you step in you see a man standing in the corner. He says nothing but he appears to be operating the elevator.";
 
@@ -303,6 +517,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     ]);
                     break;
                 case "01221111211": // Ending 2
+                document.getElementById('background').style.backgroundImage = "url(img/black.jpg)";
                     pText.textContent =
                         "You continue to sit there in silence as the man pushes buttons harder and harder until something breaks in the elevator and you feel the floor give beneath you. You fall for what seems like an eternity until you hit the bottom and everything fades to black.";
 
@@ -322,16 +537,17 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     tracker = "0122111111";
 
                     $("#choice").show();
-
+                    document.getElementById('background').style.backgroundImage = "url(img/corpOffice.jpg)";
                     pText.textContent =
                         "You continue up the elevator and thank the man inside as he leaves with a smile. As you walk into a large open room with air heavier than the dampest alley. There are what seems like hundreds of cubicles lined up next to each other with hundreds of still faced people working on dull projects that are probably as dull as the room. ";
 
                     populateOptions([
                         "Stand there all awkward....",
-                        "Does anyone here know anything about a John LawinLawinskey?"
+                        "Does anyone here know anything about a John Lawinlawinskey?"
                     ]);
                     break;
                 case "0122111123": // taking the elevator up in the building
+                document.getElementById('background').style.backgroundImage = "url(img/elevator.jpg)";
                     pText.textContent =
                         "You talk to the man in the elevator and he seems to relax as if a large weight has been lifted off of his shoulders. He pushes a couple of buttons and you make your way up to the second story.";
 
@@ -342,7 +558,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     tracker = "0122111111";
 
                     $("#choice").show();
-
+                    document.getElementById('background').style.backgroundImage = "url(img/corpOffice.jpg)";
                     pText.textContent =
                         "You continue up the elevator and thank the man inside as he leaves with a smile. As you walk into a large open room with air heavier than the dampest alley. There are what seems like hundreds of cubicles lined up next to each other with hundreds of still faced people working on dull projects that are probably as dull as the room. ";
 
@@ -352,6 +568,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     ]);
                     break;
                 case "0122111122": // This is the loop case back to the stairs
+                document.getElementById('background').style.backgroundImage = "url(img/stairs.jpg)";
                     tracker = "012211111";
                     pText.textContent =
                         "You walk over to the stairs and as you take the first step, you feel an odd presence. Almost as if some is watching you but as you look around, the building looks just as empty as forever.";
@@ -361,6 +578,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     break;
                 case "0122111111": // continue up the stairs and talk to corporate
                     $("#choice").show();
+                    document.getElementById('background').style.backgroundImage = "url(img/corpOffice.jpg)";
                     pText.textContent =
                         "You continue up the stairs and as you walk into a large open room with air heavier than the dampest alley. There are what seems like hundreds of cubicles lined up next to each other with hundreds of still faced people working on dull projects that are probably as dull as the room. ";
 
@@ -370,7 +588,8 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     ]);
                     break;
                 case "01221111111": // The one with the choice that kills you
-                    pText.textContent = "Nothing happens.";
+                document.getElementById('background').style.backgroundImage = "url(img/hamburger.jpg)";
+                    pText.textContent = "Well….Here you are. A culmination of bad choices or rather unfortunate ones. Regardless, you put yourself here. I guess at some point or another we all need to sleep in the beds we've made and this is it. This is your bed. I don't know why you've done the things that you've done but this is it for you. Goodbye, and if they ask, 'Hamburger' was never here. ";
 
                     populateOptions([
                         "'Hamburger'",
@@ -386,6 +605,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     populateOptions(["Continue"]);
                     break;
                 case "012211111111": // The end. You died.
+                document.getElementById('background').style.backgroundImage = "url(img/black.jpg)";
                     pText.textContent =
                         "As the word leaves your lips, you realized that you may have accidentally uttered a code word as 35 sleeper agents stand up from their desks and before you can react, they end your existence.";
 
@@ -404,6 +624,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     console.log("Ending 3: Death by corporate mauling.");
                     break;
                 case "012211111113": // The end. You died.
+                document.getElementById('background').style.backgroundImage = "url(img/black.jpg)";
                     pText.textContent =
                         "As the word leaves your lips, you realized that you may have accidentally uttered a code word as 35 sleeper agents stand up from their desks and before you can react, they end your existence.";
 
@@ -413,6 +634,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     console.log("Ending 3: Death by corporate mauling.");
                     break;
                 case "012211111121": // corp building cont
+                document.getElementById('background').style.backgroundImage = "url(img/corpOffice.jpg)";
                     pText.textContent =
                         "You walk over the woman with her hand up in the corner of the room. She is wearing a fairly formal uniform but nothing out of the ordinary for an ordinary office job like this one. Hello, my name is Kate. You knew John?";
 
@@ -438,6 +660,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     ]);
                     break;
                 case "012211111121111": // This is the end of part 1
+                document.getElementById('background').style.backgroundImage = "url(img/crimScene.jpg)";
                     pText.textContent =
                         "You head over to the scene of the crime. Upon arrival, you look around and see an old and almost torn down looking apartment building. Upon further inspection, you see that there is a small silver coin sitting next to the curb. While noticing this, you hear shuffling coming from the apartment next to you.";
 
@@ -446,10 +669,12 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                         "Inspect the noise coming from the house.",
                         "Look around for more clues."
                     ]);
-
+                    $("#main-menu-button").show();
+                    db.collection("rpg").doc(currentUser.displayName).delete();
                     alert("This is the end of the demo for the game.");
                     break;
                 case "012211111121112":
+                    document.getElementById('background').style.backgroundImage = "url(img/cafe.jpg)";
                     pText.textContent =
                         "You head over to the café to see if you can find any information from his friend that is usually over there at this time of the day.";
 
@@ -467,49 +692,11 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                         "Look around the room to see if you can find any clues about the victim.",
                         "Walk over to the man in the corner to ask him about the victim."
                     ]);
-
+                    $("#main-menu-button").show();
+                    db.collection("rpg").doc(currentUser.displayName).delete();
                     alert("This is the end of the demo for the game.");
                     break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
-                case "":
-                    pText.textContent = "";
-                    populateOptions([""]);
-                    break;
+                
             }
         };
 

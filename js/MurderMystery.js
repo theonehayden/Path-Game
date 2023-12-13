@@ -413,14 +413,18 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     console.log("Ending 3: Death by corporate mauling.");
                     break;
                 case "012211111121": // corp building cont
-                    // choice already hidden
                     pText.textContent =
                         "You walk over the woman with her hand up in the corner of the room. She is wearing a fairly formal uniform but nothing out of the ordinary for an ordinary office job like this one. Hello, my name is Kate. You knew John?";
+
+                    $("#choice").hide();
+                    populateOptions(["Continue"]);
                     break;
                 case "0122111111211": // corp building cont 1
-                    //choice already hidden
                     pText.textContent =
                         "I'm looking into a case involving him. He is believed to have been murdered as his sister is convinced but I have not gathered any meaningful evidence as of yet. What can you tell me about John? Did he seem off or anything of the sorts before he left work yesterday?	";
+
+                    $("#choice").hide();
+                    populateOptions(["Continue"]);
                     break;
                 case "01221111112111": // End of the corporate building
                     $("#choice").show();

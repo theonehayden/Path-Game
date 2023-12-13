@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%; display: flex">
     <head>
         <meta charset="UTF-8" />
         <title>RPG Game</title>
@@ -11,34 +11,115 @@
             crossorigin="anonymous"
         ></script>
     </head>
-    <body>
-        <div class="inCenter" id="inCenter">
-            <p id="pText">
-                In a city with one of the highest crime rates in the word, an
-                ordinary man is walking down the street. Now this street isn't
-                anything special. A lamp post here, a trash bin there, the
-                occasional barking dog, but on this night, it was quieter than
-                usual. With almost no traffic and only one other person walking
-                down the same street. Now where was this ordinary man headed? To
-                the store maybe, although most of them would be closed down this
-                late at night. Or maybe to his home to sleep after a long day of
-                work at his ordinary job. I guess that's not too important now
-                is it. The man wasn't really going to make it there anyway. As
-                the man stopped to check his watch. The figure, who had now
-                gotten closer than most people would be comfortable with, had
-                passed by the man. The man crumples to the ground, a knife in
-                his chest, and he lies there silent and still until someone
-                happens to walk by the body and call the police."
-            </p>
-        </div>
-        <div class="center" id="center">
-            <select name="choice" id="choice">
-                <option value="first">Continue</option>
-                <option value="second"></option>
-                <option value="third"></option>
-            </select>
-            <button id="submit" value="Continue">Continue</button>
+    <body style="background-color: black; flex-grow: 1">
+        <div style="height: 100%; display: flex">
+            <div
+                style="
+                    border: solid thin black;
+                    border-radius: 25px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: grey;
+                    display: flex;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                "
+            >
+                <button
+                    id="home-button"
+                    style="
+                        position: absolute;
+                        top: 27px;
+                        left: 27px;
+                        border: none;
+                        background-color: unset;
+                    "
+                >
+                    <img
+                        height="50px"
+                        width="50px"
+                        src="./img/home-button.png"
+                        alt="Home button"
+                        style="cursor: pointer"
+                        onclick="window.location.href='MainMenu.html'"
+                    />
+                </button>
+                <div
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    "
+                >
+                    <div
+                        style="
+                            background-color: whitesmoke;
+                            border-radius: 25px;
+                            padding: 27px;
+                            max-width: 75%;
+                            max-height: 75%;
+                            overflow: auto;
+                            margin-top: 50px;
+                        "
+                    >
+                        <p
+                            id="pText"
+                            style="font-size: larger; text-align: justify"
+                        >
+                            Loading...
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            margin-bottom: 50px;
+                            margin-top: 100px;
+                            display: flex;
+                            width: 100%;
+                            max-width: 75%;
+                            overflow: auto;
+                        "
+                    >
+                        <select
+                            name="choice"
+                            id="choice"
+                            style="
+                                flex-grow: 1;
+                                height: 50px;
+                                text-align: center;
+                            "
+                        >
+                            <option>Loading...</option>
+                        </select>
+                    </div>
+                    <button
+                        id="submit"
+                        value="Continue"
+                        style="width: 200px; height: 50px; border-radius: 10px"
+                    >
+                        Continue
+                    </button>
+                    <button
+                        id="main-menu-button"
+                        onclick="window.location.href='MainMenu.html'"
+                        style="
+                            width: 200px;
+                            height: 50px;
+                            border-radius: 10px;
+                            background-color: rgb(143, 40, 40);
+                            color: white;
+                        "
+                    >
+                        Main Menu
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
+    <!-- js -->
     <script src="./js/murderMystery.js"></script>
 </html>

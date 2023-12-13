@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; display: flex">
     <head>
         <meta charset="UTF-8" />
         <title>RPG Game</title>
@@ -10,7 +11,7 @@
             crossorigin="anonymous"
         ></script>
     </head>
-    <body style="background-color: black">
+    <body style="background-color: black; flex-grow: 1">
         <div style="height: 100%; display: flex">
             <div
                 style="
@@ -55,11 +56,22 @@
                             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9),
                                 0 1px 3px rgba(0, 0, 0, 0.08);
                             background-color: rgba(255, 255, 255, 0.9);
+                            max-width: 40%;
+                            overflow: auto;
                         "
                     >
                         <!-- make this into progress ?  -->
                         <h4>Release Notes</h4>
                         <hr />
+                        <ul>
+                            <li>
+                                <strong>Version 1.0.0</strong>
+                                <p>
+                                    Initial release! Adding story demo, database
+                                    and user authentication.
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                     <!-- buttons -->
                     <div
@@ -98,6 +110,7 @@
                                     background-color: rgb(143, 40, 40);
                                     color: white;
                                 "
+                                onclick="window.location.href='MurderMystery.html?'"
                             >
                                 Continue
                             </button>
@@ -112,6 +125,7 @@
                                     background-color: rgb(112, 103, 79);
                                     color: white;
                                 "
+                                onclick="alert('No, there is nothing wrong with the game.')"
                             >
                                 Report an Issue
                             </button>

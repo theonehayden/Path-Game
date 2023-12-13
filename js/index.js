@@ -21,6 +21,7 @@ $("#sign-in-button").click(e => {
         .signInWithEmailAndPassword(email, password)
         .then(() => {
             alert("Logged in.");
+            // go to main menu
             window.location.href = "MainMenu.html";
         })
         .catch(e => {
@@ -31,6 +32,7 @@ $("#sign-in-button").click(e => {
                       .replace("email", "username")
                 : e.message;
 
+            // show an appropriate error without too much code jargon
             alert(message.slice(message.indexOf(":") + 1, message.length));
         });
 });
@@ -39,6 +41,7 @@ $("#sign-in-button").click(e => {
 $("#sign-up-button").click(e => {
     e.preventDefault();
     const displayName = $("#username").val();
+    // firebase doesn't have something for username so we add email
     const email = displayName + "@something.com";
     const password = $("#password").val();
 
@@ -49,6 +52,8 @@ $("#sign-up-button").click(e => {
         .then(result => {
             result.user
                 .updateProfile({
+                    // have to update profile
+                    // we will use this instead of email for all other purposes
                     displayName: displayName
                 })
                 .then(() => {
@@ -57,12 +62,14 @@ $("#sign-up-button").click(e => {
                 });
         })
         .catch(e => {
+            // show messages about username if email since they don't know
             const message = e.message.includes("email")
                 ? e.message
                       .replace("email address", "username")
                       .replace("email", "username")
                 : e.message;
 
+            // show an appropriate error without too much code jargon
             alert(message.slice(message.indexOf(":") + 1, message.length));
         });
 });

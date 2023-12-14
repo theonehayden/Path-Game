@@ -143,6 +143,7 @@ firebase.auth().onAuthStateChanged(async currentUser => {
                     break;
                 case "0121": // you suck
                     pText.textContent = "No detecting?";
+                    document.getElementById('background').style.backgroundImage = "url(img/boom.jpg)";
 
                     hideOptions();
                     $("#main-menu-button").show();
